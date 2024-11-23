@@ -1,0 +1,39 @@
+.m-side{
+    margin-left:  120px ;
+    margin-right: 60px;
+}
+.m-top{
+    margin-top: 30px ;
+}
+.text-feild{
+    display: flex;
+    justify-content: center;
+}
+
+/* Add top margin to the container */
+.m-top {
+    margin-top: 20px; /* Adjust as needed */
+  }
+
+  h2{
+    color: #251D40;
+  }
+.question{
+    font-family: 'Poppins';
+    font-weight: 600;
+}
+.q-no{
+    font-family: 'Poppins';
+    font-weight: 500;
+}
+
+.q-no ,h4{
+    color: #251D40;
+}
+.question-sizer{
+  
+    height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}

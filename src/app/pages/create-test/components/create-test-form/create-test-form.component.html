@@ -1,0 +1,29 @@
+<div *ngFor="let question of questions; let i = index">
+  <h4>Question {{ i + 1 }}</h4>
+  <div class="form-group row">
+  <label class="col-form-label col-sm-2">Question Type</label>
+  <div class="col-sm-4">
+      <app-question-dropdown (selectedType)="onQuestionTypeSelected($event, i)"></app-question-dropdown>
+  </div>
+  <label class="col-form-label col-sm-2">Question Score</label>
+  <div class="col-sm-2">
+      <input type="number" [(ngModel)]="question.score" name="score{{ i }}" class="form-control">
+  </div>
+  </div>
+  <div *ngIf="question.type === 'mcq'">
+    <app-mcq-form [index]="i" [type]="'mcq'" (mcqData)="onMcqData($event, i)"></app-mcq-form>
+  </div>
+  <div *ngIf="question.type === 'msq'">
+    <app-mcq-form [index]="i" [type]="'msq'" (mcqData)="onMcqData($event, i)"></app-mcq-form>
+  </div>
+  <div *ngIf="question.type === 'descriptive'">
+    <app-descriptive-form [index]="i" (descData)="onDescData($event, i)"></app-descriptive-form>
+  </div>
+  <div *ngIf="question.type === 'fillup'">
+    <app-fill-in-the-blanks-form [index]="i" (fillData)="onFillData($event, i)"></app-fill-in-the-blanks-form>
+  </div>
+  <button pButton color="warn" (click)="removeQuestion(i)" class="delete-button">Delete Question</button>
+</div>
+<div class="form-group">
+  <button pButton (click)="addNewQuestion()">Add New Question</button>
+</div>
