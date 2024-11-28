@@ -114,6 +114,7 @@ export class ResetPasswordComponent {
           console.log("Password Reset Successful");
           this.passwordReset = true;
           this.userInactive = false;
+          window.location.reload();
           localStorage.removeItem("email");
         }
         else{
