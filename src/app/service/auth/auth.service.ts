@@ -45,7 +45,7 @@ export class AuthService {
   }
 
   resetPassword(email: string, password: string): Observable<any> {
-    const url = `${this.authApiUrl}/TrainerResetPassword`;
+    const url = `${this.authApiUrl}/UserResetPassword`;
     const payload = {
       email: email,
       password: password
