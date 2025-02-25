@@ -1,5 +1,3 @@
-import { filter } from "rxjs";
-
 export const adminAssessmentTable = [
     { field: 'assessmentName', header: 'Assessment Name', fixed: true, filter: true },
     { field: 'date', header: 'Date', type: 'date', filter: true },
